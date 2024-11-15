@@ -8,14 +8,15 @@
     <div id="wellcome_wrap" class="container-fluid">
         <div class="wellcome">
             <img src="{{ asset('assets/img/logoremovebg-preview.png') }}" alt="">
-            <div class="wellcome_button d-flex">
-                <button type="button" class="btn  button_login" data-bs-toggle="modal" data-bs-target="#modalLogin">
-                    Đăng Nhập
-                </button>
-            
-                <button type="button" class="btn  button_register" data-bs-toggle="modal" data-bs-target="#modalRegister">
-                    Đăng ký
-                </button>
+            <div class="wellcome_button">
+                <div class="">
+                    <button type="button" class="btn  button_login" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                        Đăng Nhập
+                    </button>
+                    <button type="button" class="btn  button_register" data-bs-toggle="modal" data-bs-target="#modalRegister">
+                        Đăng ký
+                    </button>
+                </div>
             </div>
         </div>
         

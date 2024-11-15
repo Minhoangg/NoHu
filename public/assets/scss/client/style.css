@@ -15,21 +15,28 @@
   justify-content: center;
   align-items: center;
 }
+#wellcome_wrap .wellcome {
+  margin-bottom: 100px;
+}
 #wellcome_wrap .wellcome img {
   max-width: 100%; /* Hình ảnh sẽ không vượt quá 100% chiều rộng của phần tử chứa nó */
   height: auto; /* Giữ tỷ lệ chiều cao và chiều rộng */
   min-width: 200px; /* Đảm bảo hình ảnh không quá nhỏ */
 }
-#wellcome_wrap .wellcome .wellcome_button {
-  justify-content: space-around;
+#wellcome_wrap .wellcome .wellcome_button div {
+  text-align: center;
 }
-#wellcome_wrap .wellcome .wellcome_button .button_login {
+#wellcome_wrap .wellcome .wellcome_button div .button_login {
+  width: 165px;
   padding: 5px 40px;
   background-image: -webkit-linear-gradient(-90deg, #fcebb5, #f6c300 25%, #f9a800 85%, #ffec72 115%);
   background-image: linear-gradient(-90deg, #fcebb5, #f6c300 25%, #f9a800 85%, #ffec72 115%);
+  margin: 10px 5px;
 }
-#wellcome_wrap .wellcome .wellcome_button .button_register {
+#wellcome_wrap .wellcome .wellcome_button div .button_register {
+  width: 165px;
   padding: 5px 40px;
+  margin: 10px 5px;
   background-image: -webkit-linear-gradient(-90deg, #fcebb5, #f6c300 25%, #f9a800 85%, #ffec72 115%);
   background-image: linear-gradient(-90deg, #fcebb5, #f6c300 25%, #f9a800 85%, #ffec72 115%);
 }
