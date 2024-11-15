@@ -16,7 +16,7 @@
   align-items: center;
 }
 #wellcome_wrap .wellcome {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 #wellcome_wrap .wellcome img {
   max-width: 100%; /* Hình ảnh sẽ không vượt quá 100% chiều rộng của phần tử chứa nó */
