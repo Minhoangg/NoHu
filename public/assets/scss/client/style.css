@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #video_login {
   position: absolute;
   top: 0;
@@ -8,24 +9,45 @@
   z-index: -1000000;
 }
 
-#login_wrap {
+#wellcome_wrap {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#wellcome_wrap .wellcome img {
+  max-width: 100%; /* Hình ảnh sẽ không vượt quá 100% chiều rộng của phần tử chứa nó */
+  height: auto; /* Giữ tỷ lệ chiều cao và chiều rộng */
+  min-width: 200px; /* Đảm bảo hình ảnh không quá nhỏ */
+}
+#wellcome_wrap .wellcome .wellcome_button {
+  justify-content: space-around;
+}
+#wellcome_wrap .wellcome .wellcome_button .button_login {
+  padding: 5px 40px;
+  background-image: -webkit-linear-gradient(-90deg, #fcebb5, #f6c300 25%, #f9a800 85%, #ffec72 115%);
+  background-image: linear-gradient(-90deg, #fcebb5, #f6c300 25%, #f9a800 85%, #ffec72 115%);
+}
+#wellcome_wrap .wellcome .wellcome_button .button_register {
+  padding: 5px 40px;
+  background-image: -webkit-linear-gradient(-90deg, #fcebb5, #f6c300 25%, #f9a800 85%, #ffec72 115%);
+  background-image: linear-gradient(-90deg, #fcebb5, #f6c300 25%, #f9a800 85%, #ffec72 115%);
+}
+
+#login_wrap {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #login_wrap .login_box {
   background-size: cover;
-  /* Ensures the image covers the entire box */
   background-position: center;
-  /* Centers the background image */
   background-repeat: no-repeat;
-  padding: 40px 30px;
+  padding: 60px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
-  position: relative;
 }
 #login_wrap .login_box form {
   display: flex;
