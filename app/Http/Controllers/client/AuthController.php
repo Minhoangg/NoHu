@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Jobs\DeductCoinJob;
+use Carbon\Carbon;
 
 
 class AuthController extends Controller
@@ -35,12 +37,10 @@ class AuthController extends Controller
         }
 
         if (Auth::attempt(['name' => $request->name, 'password' => $request->password])) {
-            session(['user' => [
-                'id' => Auth::user()->id,
-                'name' => Auth::user()->name,
-                'coin' => Auth::user()->coin,
-                'phone_number' => Auth::user()->phone_number,
-            ]]);
+
+            $user = Auth::user();
+            $job = (new DeductCoinJob($user->id))->delay(Carbon::now()->addMinutes(1));
+            dispatch($job);
             return redirect()->route('client.home');
         }
 

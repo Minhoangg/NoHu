@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Events\UserCoinUpdated;
 
 class userController extends Controller
 {
@@ -156,6 +157,8 @@ class userController extends Controller
         // Thêm xu vào tài khoản người dùng
         $user->coin += $request->input('coin'); // Tăng số xu của người dùng
         $user->save();
+
+        event(new UserCoinUpdated($user));
 
         // Trở lại danh sách người dùng và thông báo thành công
         return redirect()->route('system.user-getall')->with('success', 'Đã thêm xu thành công!');

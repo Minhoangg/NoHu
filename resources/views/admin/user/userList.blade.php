@@ -38,7 +38,7 @@
                                             @if(auth()->user()->role == 1) <!-- Kiểm tra role của người dùng hiện tại -->
                                                 <th>Số điện thoại</th>
                                             @endif
-                                            <th>Xu</th>
+                                            <th>coin</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,8 +56,8 @@
                                                 <td class="d-flex justify-content-between">
                                                     <form action="{{ route('system.user-add-coin', $user->id) }}" method="POST">
                                                         @csrf
-                                                        <input type="number" name="coin" class="form-control" placeholder="Nhập xu" min="1" required style="width: 100px; display: inline-block;" />
-                                                        <button type="submit" class="btn btn-warning" style="display: inline-block;">Thêm Xu</button>
+                                                        <input type="number" name="coin" class="form-control" placeholder="Nhập coin" min="1" required style="width: 100px; display: inline-block;" />
+                                                        <button type="submit" class="btn btn-warning" style="display: inline-block;">Thêm Coin</button>
                                                     </form>
                                                     <a href="{{ route('system.user-delete', $user->id) }}" class="btn btn-danger"
                                                         onclick="event.preventDefault(); 

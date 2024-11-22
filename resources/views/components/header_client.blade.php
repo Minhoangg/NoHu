@@ -12,19 +12,30 @@
                     <i class="fa-solid fa-bars"></i>
                 </div>
 
-                <div class=" action col-6 d-flex justify-content-end align-items-center  ">
-                    <div class="account">
-                        <i class="fa-regular fa-user"></i>
-                        <span class="">Bigwin</span>
-                    </div>
-                    <div class="account" >
-                        <i class="fa-solid fa-coins"></i>
-                        <span class="">100</span>
-                    </div>
-                    <div class="account" >
-                        <span class=""><a href="{{ route('client.logout') }}"><i class="fa-solid fa-right-from-bracket"></i></a></span>
-                    </div>
+                <div class="action col-6 d-flex justify-content-end align-items-center">
+                    @if (Auth::check()) {{-- Kiểm tra nếu người dùng đã đăng nhập --}}
+                        <div class="account">
+                            <i class="fa-regular fa-user"></i>
+                            <span>{{ Auth::user()->name }}</span> {{-- Hiển thị tên người dùng --}}
+                        </div>
+                        <div class="account">
+                            <i class="fa-solid fa-coins"></i>
+                            <span>{{ Auth::user()->coin }}</span> {{-- Hiển thị số coins hoặc thông tin khác --}}
+                        </div>
+                        <div class="account">
+                            <span>
+                                <a href="{{ route('client.logout') }}">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                </a>
+                            </span>
+                        </div>
+                    @else {{-- Nếu chưa đăng nhập --}}
+                        <div class="account">
+                            <span><a href="{{ route('login') }}">Đăng nhập</a></span>
+                        </div>
+                    @endif
                 </div>
+                
             </div>
         </div>
     </div>

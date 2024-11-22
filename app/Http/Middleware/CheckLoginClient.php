@@ -20,7 +20,7 @@ class CheckLoginClient
         // Kiểm tra xem người dùng đã đăng nhập chưa
         if (!Auth::check()) {
             // Nếu chưa đăng nhập, chuyển hướng về trang login
-            return redirect()->route('client.home');
+            return redirect()->route('client.wellcome');
         }
 
         // Nếu đã đăng nhập, tiếp tục với request

@@ -30,12 +30,12 @@
                 </li>
 
                 @if (auth()->user()->role == 1)
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{ route('system.adminAccount-getall') }}">
                         <i class="fas fa-user"></i>
                         <p>Admin</p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a href="{{ route('system.user-getall') }}">
                         <i class="fas fa-user"></i>
