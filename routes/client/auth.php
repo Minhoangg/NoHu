@@ -11,5 +11,5 @@ Route::post('/register', [AuthController::class, 'registerHandle'])->name('regis
 Route::get('/logout', function () {
     Auth::logout();
     session()->forget('user');
-    return redirect()->route('client.home');
+    return redirect()->route('client.wellcome');
 })->name('logout');

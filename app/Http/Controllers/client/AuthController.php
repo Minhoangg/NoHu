@@ -41,7 +41,7 @@ class AuthController extends Controller
                 'coin' => Auth::user()->coin,
                 'phone_number' => Auth::user()->phone_number,
             ]]);
-            return redirect()->route('client.home-lobby');
+            return redirect()->route('client.home');
         }
 
         return redirect()->back()->with('error', 'Tên đăng nhập hoặc mật khẩu không đúng.'); // Lỗi đăng nhập

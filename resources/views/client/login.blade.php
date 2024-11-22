@@ -51,6 +51,8 @@
                         <button type="submit" class="btn btn-primary">Đăng nhập</button>
                     </div>
                 </form>
+            <p style="color: white">bạn chưa có tài khoản <a href="{{ route('client.register-form') }}">đăng ký</a></p>
+
             </div>
         </div>
 

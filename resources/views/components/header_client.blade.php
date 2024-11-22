@@ -13,16 +13,16 @@
                 </div>
 
                 <div class=" action col-6 d-flex justify-content-end align-items-center  ">
-                    <div class="account" onClick={openLoginPopup}>
+                    <div class="account">
                         <i class="fa-regular fa-user"></i>
                         <span class="">Bigwin</span>
                     </div>
-                    <div class="account" onClick={openLoginPopup}>
+                    <div class="account" >
                         <i class="fa-solid fa-coins"></i>
                         <span class="">100</span>
                     </div>
-                    <div class="account" onClick={openLoginPopup}>
-                        <span class=""><a href=""><i class="fa-solid fa-right-from-bracket"></i></a></span>
+                    <div class="account" >
+                        <span class=""><a href="{{ route('client.logout') }}"><i class="fa-solid fa-right-from-bracket"></i></a></span>
                     </div>
                 </div>
             </div>
