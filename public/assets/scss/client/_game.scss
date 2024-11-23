@@ -1,4 +1,4 @@
-.home_wrap {
+.game_wrap {
     height: 100vh;
 
     video {
@@ -17,13 +17,18 @@
         justify-content: center;
         align-items: center;
 
-        .box_lobby {
+        .box_game {
             width: 100%;
             height: 100vh;
             padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+
+            .back{
+                color: aquamarine;
+                padding: 0px 15px;
+                i{
+                    font-size: xx-large;
+                }
+            }
 
             .row {
                 width: 100%;
@@ -31,6 +36,7 @@
                 overflow-y: auto;
                 scrollbar-width: none;
                 padding: 0px;
+                margin: 0 auto;
 
                 .lobby_item_parent {
 
@@ -39,15 +45,20 @@
                     .lobby_item {
 
                         a {
-                            color: white; /* Màu chữ trắng */
+                            color: white;
+                            /* Màu chữ trắng */
                             padding: 10px;
-                            border: 2px solid white; /* Viền trắng */
-                            border-radius: 20px; /* Bo tròn góc */
+                            border: 2px solid white;
+                            /* Viền trắng */
+                            border-radius: 20px;
+                            /* Bo tròn góc */
                             display: flex;
                             justify-content: space-between;
                             text-decoration: none;
-                            background-color: #6b7775; /* Nền xám nhẹ */
-                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ để tạo chiều sâu */
+                            background-color: #6b7775;
+                            /* Nền xám nhẹ */
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                            /* Thêm bóng nhẹ để tạo chiều sâu */
                             transition: background-color 0.3s ease-in-out;
 
                             img {
@@ -64,11 +75,13 @@
                             .animation_item {
                                 width: 77px;
                                 height: 70px;
-                                background-size: cover; /* Hoặc 'contain' tùy thuộc vào hiệu ứng bạn muốn */
+                                background-size: cover;
+                                /* Hoặc 'contain' tùy thuộc vào hiệu ứng bạn muốn */
                                 background-position: center;
                                 background-repeat: no-repeat;
                                 position: relative;
-                                img{
+
+                                img {
                                     position: absolute;
                                     top: 50%;
                                     left: 50%;
@@ -79,10 +92,13 @@
 
                                     @keyframes spin {
                                         0% {
-                                            transform: translate(-50%, -50%) rotate(0deg); /* Đảm bảo hình ảnh bắt đầu từ 0 độ */
+                                            transform: translate(-50%, -50%) rotate(0deg);
+                                            /* Đảm bảo hình ảnh bắt đầu từ 0 độ */
                                         }
+
                                         100% {
-                                            transform: translate(-50%, -50%) rotate(360deg); /* Quay 360 độ */
+                                            transform: translate(-50%, -50%) rotate(360deg);
+                                            /* Quay 360 độ */
                                         }
                                     }
                                 }
