@@ -22,10 +22,11 @@
             height: 100vh;
             padding: 10px;
 
-            .back{
+            .back {
                 color: aquamarine;
                 padding: 0px 15px;
-                i{
+
+                i {
                     font-size: xx-large;
                 }
             }
@@ -82,24 +83,25 @@
                                 position: relative;
 
                                 img {
-                                    position: absolute;
-                                    top: 50%;
-                                    left: 50%;
-                                    transform: translate(-50%, -50%);
                                     width: 100%;
                                     height: auto;
-                                    animation: spin 1s linear infinite;
+                                    clip-path: circle(50% at 50% 50%);
+                                    animation: spin 5s linear infinite;
+                                    aspect-ratio: 1/1;
+                                    cursor: pointer;
 
                                     @keyframes spin {
                                         0% {
-                                            transform: translate(-50%, -50%) rotate(0deg);
-                                            /* Đảm bảo hình ảnh bắt đầu từ 0 độ */
+                                            transform: rotate(0deg);
                                         }
 
                                         100% {
-                                            transform: translate(-50%, -50%) rotate(360deg);
-                                            /* Quay 360 độ */
+                                            transform: rotate(360deg);
                                         }
+                                    }
+
+                                    &:hover {
+                                        animation-direction: reverse;
                                     }
                                 }
 

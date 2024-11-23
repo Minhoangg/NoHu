@@ -22,10 +22,8 @@
                                     <img src="{{ asset('storage/' . $game->image) }}" height="auto"
                                         alt="{{ $game->title }}">
                                     <div class="item_name">{{ $game->title }}</div>
-                                    <div class="animation_item"
-                                        style=" background-image: url('{{ asset('assets/img/loadrmbg.png') }}')">
-                                        <img src="{{ asset('assets/img/photo_6190289574807322784_x-removebg-preview.png') }}"
-                                            alt="">
+                                    <div class="animation_item">
+                                        <img class="vortex" src="https://assets.codepen.io/191814/ai-spiral.jpg" alt="" />
                                     </div>
                                 </a>
                             </div>
