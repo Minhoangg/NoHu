@@ -6,19 +6,19 @@
             <source src="{{ asset('assets/video/1120.mp4') }}" type="video/mp4">
         </video>
 
-        <div class="container game_box">
+        <div class="container game_box">    
             <div class="box_game">
                 <div class="back d-flex justify-content-between">
-                    <i class="fa-solid fa-backward"></i>
+                    <i onclick="goBack()" class="fa-solid fa-backward"></i>
                     <div class="name">
-                        <h4>Sảnh PG</h4>
+                        <h4>{{$lobby->name}}</h4>
                     </div>
                 </div>
                 <div class="row">
                     @foreach ($games as $game)
                         <div class="col-12 col-sm-6 col-md-4 lobby_item_parent">
                             <div class="lobby_item">
-                                <a href="">
+                                <a href="{{ route('client.get-score', $lobby->id) }}">
                                     <img src="{{ asset('storage/' . $game->image) }}" height="auto"
                                         alt="{{ $game->title }}">
                                     <div class="item_name">{{ $game->title }}</div>

@@ -17,8 +17,6 @@
                                 <div class="item_name">{{$lobby->name}}</div>
                                 <div class="animation_item"
                                     style=" background-image: url('{{ asset('assets/img/loadrmbg.png') }}')">
-                                    <img src="{{ asset('assets/img/photo_6190289574807322784_x-removebg-preview.png') }}"
-                                        alt="">
                                 </div>
                             </a>
                         </div>
