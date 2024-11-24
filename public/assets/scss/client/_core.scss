@@ -1,0 +1,691 @@
+.core_wrap {
+    height: 100vh;
+
+    video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1000;
+    }
+
+    .container {
+        position: relative;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .box_core {
+            width: 100%;
+            height: 100vh;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .frame_core {
+                background-image: url('../../img/v707-aew-41-technologybackground.jpg');
+                background-size: 100% 100%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 80vh;
+                padding: 20px 20px;
+
+                .frame_core_top {
+                    width: 100%;
+                    color: aquamarine;
+                    display: flex;
+                    align-items: center;
+                    padding: 0px 20px;
+
+                    i {
+                        font-size: large;
+                    }
+
+                    .name {
+                        display: none;
+
+                        .loading {
+
+                            position: relative;
+                            display: flex;
+                            gap: 15px;
+                        }
+
+                        .loading span {
+                            position: relative;
+                            width: 5px;
+                            height: 20px;
+
+                        }
+
+                        .loading span::before {
+                            content: '';
+                            position: absolute;
+                            inset: 0;
+                            animation: animate_load 8s linear infinite;
+                            animation-delay: calc(var(--i) * 0.1s);
+                        }
+
+                        @keyframes animate_load {
+                            0% {
+                                background: #0f0;
+                                box-shadow: 0 0 5px #0f0,
+                                    0 0 15px #0f0,
+                                    0 0 30px #0f0,
+                                    0 0 50px #0f0;
+                                rotate: 0deg;
+                            }
+
+                            20% {
+                                background: #0f0;
+                                box-shadow: 0 0 5px #0f0,
+                                    0 0 15px #0f0,
+                                    0 0 30px #0f0,
+                                    0 0 50px #0f0;
+                                rotate: 0deg;
+                            }
+
+                            40% {
+                                background: #0f0;
+                                box-shadow: 0 0 5px #0f0,
+                                    0 0 15px #0f0,
+                                    0 0 30px #0f0,
+                                    0 0 50px #0f0;
+                                rotate: 90deg;
+                                transform-origin: bottom;
+                                filter: hue-rotate(0deg);
+                            }
+
+                            80% {
+                                background: #0f0;
+                                box-shadow: 0 0 5px #0f0,
+                                    0 0 15px #0f0,
+                                    0 0 30px #0f0,
+                                    0 0 50px #0f0;
+                                rotate: 90deg;
+                                transform-origin: bottom;
+                                filter: hue-rotate(360deg);
+
+                            }
+
+                            90% {
+                                background: #000;
+                                box-shadow: none;
+                                rotate: 0deg;
+                            }
+
+                            90.1%,
+                            100% {
+                                box-shadow: #000;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+
+                .frame_core_bottom {
+
+                    .frame_core_bottom_left {
+                        img {
+                            display: none;
+                        }
+                    }
+
+                    .frame_core_bottom_right {
+                        width: 100%;
+                        padding: 10px;
+
+                        .frame_core_bottom_right_1 {
+                            width: 100%;
+                            padding: 20px 0px;
+
+
+                            .ratio_dt {
+
+                                display: flex;
+                                justify-content: center;
+
+                                .ring {
+                                    width: 80px;
+                                    height: 80px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    position: relative;
+                                    color: white;
+                                    float: left;
+
+                                    h1 {
+                                        font-size: 1.3rem;
+                                    }
+
+                                    &::before {
+                                        content: '';
+                                        width: 80px;
+                                        height: 80px;
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        border-radius: 50%;
+                                        animation: ring 2s linear infinite;
+                                    }
+                                }
+
+                                @keyframes ring {
+                                    0% {
+                                        transform: rotate(0deg);
+                                        box-shadow: 0px 5px 5px #ff2121;
+                                    }
+
+                                    25% {
+                                        transform: rotate(90deg);
+                                        box-shadow: 0px 5px 5px #fffb21;
+                                    }
+
+                                    50% {
+                                        transform: rotate(180deg);
+                                        box-shadow: 0px 5px 5px #21c0ff;
+                                    }
+
+                                    75% {
+                                        transform: rotate(270deg);
+                                        box-shadow: 0px 5px 5px #bc21ff;
+                                    }
+
+                                    100% {
+                                        transform: rotate(360deg);
+                                        box-shadow: 0px 5px 5px #ff2121;
+                                    }
+                                }
+
+                            }
+
+                            .image {
+                                display: flex;
+                                justify-content: center;
+                                padding: 10px;
+                            }
+
+                            .name {
+                                text-align: center;
+                                color: white;
+
+                            }
+
+                            .scan {
+                                display: none;
+                                position: relative;
+                                text-align: center;
+
+
+                                .fingerprint {
+                                    margin: auto;
+                                    position: relative;
+                                    width: 75px; // Giảm thêm chiều rộng
+                                    height: 95px; // Giảm thêm chiều cao
+                                    background: url(https://img.playbook.com/IqiomQg4exY5aWlDS3672EcidSBHXX-Ei4HGylg9i0k/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzI4OTJhZjg1/LTMzMTItNGI1OC05/YjVkLTBhNGYxMzU0/YWE0Mg);
+                                    background-size: 75px; // Điều chỉnh kích thước nền phù hợp
+
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background: url(https://img.playbook.com/L3RYf73i1Fwu5y4HqiqQDLvhDOFbUINDLe3PSUvQNUA/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzk0MmIzOGFl/LWFmZmYtNGQ1OS1h/NGFjLTM3YTk4N2Rj/Y2Y0YQ);
+                                        background-size: 75px; // Điều chỉnh kích thước nền
+                                        animation: animate 4s ease-in-out infinite;
+                                    }
+
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 2px; // Giảm chiều cao
+                                        background: #3fefef;
+                                        border-radius: 2px; // Giảm bo góc
+                                        filter: drop-shadow(0 0 5px #3fefef) drop-shadow(0 0 15px #3fefef);
+                                        animation: animate_line 4s ease-in-out infinite;
+                                    }
+                                }
+
+                                h3 {
+                                    text-transform: uppercase;
+                                    font-size: 0.5em; // Giảm kích thước chữ
+                                    letter-spacing: 0.5px;
+                                    margin-top: 5px;
+                                    color: #3fefef;
+                                    filter: drop-shadow(0 0 5px #3fefef) drop-shadow(0 0 15px #3fefef);
+                                    animation: animate_text 0.5s steps(1) infinite;
+                                }
+                            }
+
+                            @keyframes animate {
+
+                                0%,
+                                100% {
+                                    height: 0%;
+                                }
+
+                                50% {
+                                    height: 100%;
+                                }
+                            }
+
+                            @keyframes animate_line {
+
+                                0%,
+                                100% {
+                                    top: 0%;
+                                }
+
+                                50% {
+                                    top: 100%;
+                                }
+                            }
+
+                            @keyframes animate_text {
+
+                                0%,
+                                100% {
+                                    opacity: 0;
+                                }
+
+                                50% {
+                                    opacity: 1;
+                                }
+                            }
+
+
+
+
+
+
+                        }
+
+                        .frame_core_bottom_right_2 {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-around;
+                            padding: 20px 0px;
+
+                            canvas {
+                                display: none;
+                            }
+
+                            div {
+                                .button-time {
+                                    display: inline-block;
+                                    padding: 10px;
+                                    font-size: 13px;
+                                    font-weight: bold;
+                                    color: #fff;
+                                    background: linear-gradient(90deg, #ff007a, #00d4ff);
+                                    border: 3px solid transparent;
+                                    border-radius: 8px;
+                                    text-transform: uppercase;
+                                    cursor: pointer;
+                                    transition: all 0.4s ease;
+                                    position: relative;
+                                    overflow: hidden;
+
+                                    // Hiệu ứng phát sáng
+                                    box-shadow: 0 0 15px rgba(255, 0, 122, 0.6), 0 0 30px rgba(0, 212, 255, 0.6);
+
+                                    // Gradient animation
+                                    background-size: 200% 200%;
+                                    animation: gradientAnimation 3s ease infinite;
+
+                                    // Hover effect
+                                    &:hover {
+                                        color: #000;
+                                        background: #fff;
+                                        box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6);
+                                        border-color: #ff007a;
+                                    }
+
+                                    // Text shadow để nổi bật
+                                    text-shadow: 0 0 10px #ff007a,
+                                    0 0 20px #00d4ff;
+
+                                    // Hiệu ứng gradient
+                                    @keyframes gradientAnimation {
+                                        0% {
+                                            background-position: 0% 50%;
+                                        }
+
+                                        50% {
+                                            background-position: 100% 50%;
+                                        }
+
+                                        100% {
+                                            background-position: 0% 50%;
+                                        }
+                                    }
+                                }
+
+                                .button-secondary {
+                                    display: inline-block;
+                                    padding: 10px;
+                                    font-size: 13px;
+                                    font-weight: bold;
+                                    color: #fff;
+                                    background: linear-gradient(90deg, #ff007a, #00d4ff);
+                                    border: 3px solid transparent;
+                                    border-radius: 8px;
+                                    text-transform: uppercase;
+                                    cursor: pointer;
+                                    transition: all 0.4s ease;
+                                    position: relative;
+                                    overflow: hidden;
+
+                                    // Hiệu ứng phát sáng
+                                    box-shadow: 0 0 15px rgba(255, 0, 122, 0.6), 0 0 30px rgba(0, 212, 255, 0.6);
+
+                                    // Gradient animation
+                                    background-size: 200% 200%;
+                                    animation: gradientAnimation 3s ease infinite;
+
+                                    // Hover effect
+                                    &:hover {
+                                        color: #000;
+                                        background: #fff;
+                                        box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6);
+                                        border-color: #ff007a;
+                                    }
+
+                                    // Text shadow để nổi bật
+                                    text-shadow: 0 0 10px #ff007a,
+                                    0 0 20px #00d4ff;
+
+                                    // Hiệu ứng gradient
+                                    @keyframes gradientAnimation {
+                                        0% {
+                                            background-position: 0% 50%;
+                                        }
+
+                                        50% {
+                                            background-position: 100% 50%;
+                                        }
+
+                                        100% {
+                                            background-position: 0% 50%;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+
+                        .frame_core_bottom_right_3 {
+                            width: 100%;
+                            text-align: center;
+                            padding: 20px 0px;
+
+
+                            img {
+                                display: none;
+                            }
+
+                            button {
+                                animation: btn-item 2s ease-in-out infinite alternate;
+                                background-image: linear-gradient(#bde94b, #2dda4f);
+                                border: 1px solid #fff;
+                                border-radius: 30px;
+                                color: #fff;
+                                cursor: pointer;
+                                font-size: 20px;
+                                line-height: 1;
+                                padding: 10px 20px;
+
+                                @keyframes btn-item {
+                                    0% {
+                                        box-shadow: 0 0 7px #fef1e5
+                                    }
+
+                                    to {
+                                        box-shadow: 0 0 20px #fef1e5
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+
+                }
+
+            }
+
+
+        }
+    }
+}
+
+
+
+
+
+
+@media (min-width: 426px) {
+    .core_wrap {
+        .container {
+            .box_core {
+                .frame_core {
+                    background-image: url('../../img/v707-aew-41-technologybackground.jpg');
+                    background-size: 100% 100%;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    padding: 20px 53px;
+
+                    .frame_core_top {
+                        height: 10%;
+
+                        .name {
+                            display: block;
+                        }
+
+                        i {
+                            font-size: x-large;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .core_wrap {
+        .container {
+            .box_core {
+                .frame_core {
+                    padding: 20px 77px;
+                    height: 437px;
+
+
+
+                    .frame_core_bottom {
+                        width: 100%;
+                        height: 90%;
+
+                        .frame_core_bottom_left {
+                            width: 25%;
+                            display: flex;
+                            align-items: center;
+                            height: 100%;
+
+                            img {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                        .frame_core_bottom_right {
+                            width: 75%;
+                            padding: 10px;
+
+                            .frame_core_bottom_right_1 {
+                                width: 100%;
+                                height: 20%;
+                                display: flex;
+                                justify-content: space-around;
+                                align-items: center;
+
+
+                            }
+
+                            .frame_core_bottom_right_2 {
+                                width: 100%;
+                                height: 60%;
+
+                                canvas {
+                                    display: block;
+                                    width: 70%;
+                                }
+
+                                div {
+
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+
+                                    width: 30%;
+
+                                    .button-time {
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        margin: 10px 0px;
+                                    }
+
+                                    .button-secondary {
+                                        width: 100%;
+                                        margin: 10px 0px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+
+                                    }
+                                }
+
+                            }
+
+                            .frame_core_bottom_right_3 {
+                                width: 100%;
+                                height: 20%;
+                                background-image: url('../../img/2.png');
+                                background-size: 100% 100%;
+                                background-position: center center;
+                                background-repeat: no-repeat;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                position: relative;
+
+                                button {
+                                    animation: btn-item 2s ease-in-out infinite alternate;
+                                    background-image: linear-gradient(#bde94b, #2dda4f);
+                                    border: 1px solid #fff;
+                                    border-radius: 30px;
+                                    color: #fff;
+                                    cursor: pointer;
+                                    font-size: 20px;
+                                    line-height: 1;
+                                    padding: 10px 20px;
+
+                                    @keyframes btn-item {
+                                        0% {
+                                            box-shadow: 0 0 7px #fef1e5
+                                        }
+
+                                        to {
+                                            box-shadow: 0 0 20px #fef1e5
+                                        }
+                                    }
+                                }
+
+                                img {
+                                    display: block;
+                                    animation: spin 2s linear infinite;
+                                    bottom: 10px;
+                                    position: absolute;
+                                    right: 20px;
+                                    width: 80px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .core_wrap {
+        .container {
+            .box_core {
+                .frame_core {
+                    padding: 20px 104px;
+
+                    .frame_core_bottom {
+                        .frame_core_bottom_left {
+                            display: flex;
+                            align-items: center;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+    .core_wrap {
+        .container {
+            .box_core {
+                .frame_core {
+                    width: 80%;
+                    padding: 20px 83px;
+
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .core_wrap {
+        .container {
+            .box_core {
+                .frame_core {
+                    padding: 20px 98px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    .core_wrap {
+        .container {
+            .box_core {
+                .frame_core {
+                    padding: 20px 115px;
+                }
+            }
+        }
+    }
+}
