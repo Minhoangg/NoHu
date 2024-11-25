@@ -37,46 +37,6 @@ class WellcomeController extends Controller
 
         $GameId = $id;
 
-        // $userId = Auth::id();
-
-        // $session = UserGameSession::where('user_id', $userId)
-        //     ->where('game_id', $GameId)
-        //     ->first();
-
-        // if (!$session) {
-
-        //     // Tạo một session mới cho người chơi
-        //     $session = UserGameSession::create([
-        //         'user_id' => $userId,
-        //         'game_id' => $GameId,
-        //         'round_min' => null,
-        //         'round_max' => null,
-        //         'percent' => null,
-        //         'time_start' => null,
-        //         'time_end' => null,
-        //     ]);
-        // }
-
-        // $sessions = UserGameSession::whereNotNull('time_end')->get();
-
-        // foreach ($sessions as $session) {
-        //     // Chuyển đổi thời gian lưu vào đối tượng Carbon
-        //     $lastRateReceivedAt = Carbon::parse($session->time_end);
-        //     $currentDateTime = now(); // Lấy thời gian hiện tại
-
-
-        //     // Nếu đã qua 35 phút, cập nhật last_rate_received_at thành null
-        //     if ($currentDateTime >= $lastRateReceivedAt) {
-        //         $session->update([
-        //             'time_start' => null,
-        //             'time_end' => null,
-        //             'percent' => null,  // Nếu cần, có thể cập nhật thêm các trường khác
-        //             'round_max' => null,
-        //             'round_min' => null,
-        //         ]);
-        //     }
-        // }
-
         return view('client.getscoregame', compact('GameId'));
     }
 }

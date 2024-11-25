@@ -9,7 +9,22 @@ Route::post('/login', [AuthController::class, 'loginHandle'])->name('login-submi
 Route::get('/register', [AuthController::class, 'registerForm'])->name('register-form');
 Route::post('/register', [AuthController::class, 'registerHandle'])->name('register-submit');
 Route::get('/logout', function () {
+    // Lấy người dùng hiện tại
+    $user = Auth::user();
+
+    // Kiểm tra nếu người dùng đã đăng nhập
+    if ($user) {
+        // Cập nhật thông tin last_login_at trước khi đăng xuất
+        $user->last_login_at = null;
+        $user->save();
+    }
+
+    // Thực hiện đăng xuất
     Auth::logout();
-    session()->forget('user');
+
+    // Xóa session người dùng (nếu cần thiết)
+    session()->invalidate();
+
+    // Đưa người dùng về trang welcome
     return redirect()->route('client.wellcome');
 })->name('logout');

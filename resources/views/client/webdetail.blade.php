@@ -18,7 +18,7 @@
                     @foreach ($games as $game)
                         <div class="col-12 col-sm-6 col-md-4 lobby_item_parent">
                             <div class="lobby_item">
-                                <a href="{{ route('client.get-score', $lobby->id) }}">
+                                <a href="{{ route('client.get-score', $game->id) }}">
                                     <img src="{{ asset('storage/' . $game->image) }}" height="auto"
                                         alt="{{ $game->title }}">
                                     <div class="item_name">{{ $game->title }}</div>
