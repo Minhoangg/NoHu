@@ -25,20 +25,20 @@
             align-items: center;
 
             .frame_core {
-                background-image: url('../../img/v707-aew-41-technologybackground.jpg');
+                background-image: url('../../img/Asset2.png');
                 background-size: 100% 100%;
                 background-position: center center;
                 background-repeat: no-repeat;
                 width: 100%;
-                height: 80vh;
-                padding: 20px 20px;
+                height: 100vh;
+                padding: 70px 24px;
 
                 .frame_core_top {
                     width: 100%;
                     color: aquamarine;
                     display: flex;
                     align-items: center;
-                    padding: 0px 20px;
+                    padding: 0px 10px;
 
                     i {
                         font-size: large;
@@ -47,8 +47,9 @@
                     .name {
                         display: none;
 
-                        .loading {
 
+
+                        .loading {
                             position: relative;
                             display: flex;
                             gap: 15px;
@@ -124,13 +125,72 @@
                             }
                         }
                     }
+
+                    #arrowAnim {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .arrow {
+                        width: 3vw;
+                        height: 3vw;
+                        border: 0.5vw solid;
+                        border-color: transparent aquamarine aquamarine transparent; // Đổi hướng mũi tên
+                        transform: rotate(136deg); // Xoay mũi tên ngược lại
+                    }
+
+                    .arrowSliding {
+                        position: absolute;
+                        animation: slide 4s linear infinite;
+
+                        &.delay1 {
+                            animation-delay: 1s;
+                        }
+
+                        &.delay2 {
+                            animation-delay: 2s;
+                        }
+
+                        &.delay3 {
+                            animation-delay: 3s;
+                        }
+                    }
+
+                    @keyframes slide {
+                        0% {
+                            opacity: 0;
+                            transform: translateX(1vw); // Bắt đầu từ bên phải
+                        }
+
+                        20% {
+                            opacity: 1;
+                            transform: translateX(1vw); // Di chuyển vào giữa
+                        }
+
+                        80% {
+                            opacity: 1;
+                            transform: translateX(-5vw); // Di chuyển gần ra khỏi màn hình
+                        }
+
+                        100% {
+                            opacity: 0;
+                            transform: translateX(-10vw); // Ra khỏi màn hình bên trái
+                        }
+                    }
                 }
 
                 .frame_core_bottom {
 
                     .frame_core_bottom_left {
-                        img {
-                            display: none;
+                        position: relative;
+                        video{
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            z-index: 100;
+                            width: 100%;
+                            height: 100%;
                         }
                     }
 
@@ -140,7 +200,6 @@
 
                         .frame_core_bottom_right_1 {
                             width: 100%;
-                            padding: 20px 0px;
 
 
                             .ratio_dt {
@@ -157,6 +216,7 @@
                                     position: relative;
                                     color: white;
                                     float: left;
+                                    padding: 5px 0px;
 
                                     h1 {
                                         font-size: 1.3rem;
@@ -212,6 +272,24 @@
                             .name {
                                 text-align: center;
                                 color: white;
+
+                                svg {
+
+                                    width: 100%;
+                                    height: 50px;
+
+                                    text {
+                                        fill: url(#imagePattern);
+                                        font-family: "Protest Guerrilla", sans-serif;
+                                        font-size: 90px;
+                                        letter-spacing: 5px;
+                                        stroke: rgb(130, 217, 252);
+                                        stroke-width: 1px;
+                                        stroke-dasharray: 500;
+                                        stroke-dashoffset: 500;
+                                        filter: url(#glowFilter);
+                                    }
+                                }
 
                             }
 
@@ -433,27 +511,145 @@
                                 display: none;
                             }
 
-                            button {
-                                animation: btn-item 2s ease-in-out infinite alternate;
-                                background-image: linear-gradient(#bde94b, #2dda4f);
-                                border: 1px solid #fff;
-                                border-radius: 30px;
-                                color: #fff;
+                            .neon-button {
+                                position: relative;
+                                color: #00f6ff;
+                                font-family: 'Orbitron', sans-serif;
+                                font-size: 28px;
+                                letter-spacing: 2px;
+                                text-transform: uppercase;
+                                background: #111;
+                                border: none;
+                                border-radius: 15px;
                                 cursor: pointer;
-                                font-size: 20px;
-                                line-height: 1;
-                                padding: 10px 20px;
+                                overflow: hidden;
+                                box-shadow:
+                                    inset 0 0 10px rgba(0, 246, 255, 0.3),
+                                    0 0 20px rgba(0, 246, 255, 0.6);
+                                transition: transform 0.2s ease-in-out;
 
-                                @keyframes btn-item {
-                                    0% {
-                                        box-shadow: 0 0 7px #fef1e5
-                                    }
+                                &:hover {
+                                    transform: scale(1.1) rotate(2deg);
+                                    box-shadow:
+                                        inset 0 0 20px rgba(0, 246, 255, 0.5),
+                                        0 0 30px rgba(0, 246, 255, 0.8);
+                                }
 
-                                    to {
-                                        box-shadow: 0 0 20px #fef1e5
+                                span {
+                                    font-size: 16px;
+                                    position: relative;
+                                    z-index: 2;
+                                }
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    top: -50%;
+                                    left: -50%;
+                                    width: 200%;
+                                    height: 200%;
+                                    background: repeating-conic-gradient(from 0deg,
+                                            rgba(0, 246, 255, 0.05),
+                                            rgba(0, 246, 255, 0.1) 10%,
+                                            transparent 10%,
+                                            transparent 20%);
+                                    animation: rotate 8s linear infinite;
+                                    pointer-events: none;
+                                }
+
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    top: -10px;
+                                    left: -10px;
+                                    right: -10px;
+                                    bottom: -10px;
+                                    background: radial-gradient(circle at center, rgba(0, 246, 255, 0.2), transparent);
+                                    filter: blur(20px);
+                                    opacity: 0;
+                                    transition: opacity 0.5s;
+                                    border-radius: 25px;
+                                }
+
+                                &:hover::after {
+                                    opacity: 1;
+                                }
+
+                                .neon-border {
+                                    position: absolute;
+                                    top: -4px;
+                                    left: -4px;
+                                    right: -4px;
+                                    bottom: -4px;
+                                    border: 4px double rgba(0, 246, 255, 0.7);
+                                    border-radius: 19px;
+                                    box-shadow: 0 0 20px rgba(0, 246, 255, 0.5);
+                                    animation: border-pulse 3s infinite;
+                                    pointer-events: none;
+                                }
+
+                                .neon-glow {
+                                    position: absolute;
+                                    top: 0;
+                                    left: -50%;
+                                    width: 200%;
+                                    height: 100%;
+                                    background: linear-gradient(120deg, transparent, rgba(0, 246, 255, 0.5), transparent);
+                                    transform: skewX(-30deg);
+                                    opacity: 0;
+                                    animation: glow-move 4s infinite;
+                                    pointer-events: none;
+
+                                    &:hover {
+                                        animation-play-state: running;
                                     }
                                 }
                             }
+
+                            @keyframes rotate {
+                                from {
+                                    transform: rotate(0deg);
+                                }
+
+                                to {
+                                    transform: rotate(360deg);
+                                }
+                            }
+
+                            @keyframes border-pulse {
+                                0% {
+                                    opacity: 0.8;
+                                    transform: scale(0.98);
+                                }
+
+                                50% {
+                                    opacity: 1;
+                                    transform: scale(1.02);
+                                }
+
+                                100% {
+                                    opacity: 0.8;
+                                    transform: scale(0.98);
+                                }
+                            }
+
+                            @keyframes glow-move {
+                                0% {
+                                    opacity: 0;
+                                    transform: translateX(-100%) skewX(-30deg);
+                                }
+
+                                50% {
+                                    opacity: 1;
+                                    transform: translateX(100%) skewX(-30deg);
+                                }
+
+                                100% {
+                                    opacity: 0;
+                                    transform: translateX(200%) skewX(-30deg);
+                                }
+                            }
+
                         }
 
                     }
@@ -478,22 +674,28 @@
         .container {
             .box_core {
                 .frame_core {
-                    background-image: url('../../img/v707-aew-41-technologybackground.jpg');
+                    background-image: url('../../img/Asset2.png');
                     background-size: 100% 100%;
                     background-position: center center;
                     background-repeat: no-repeat;
-                    padding: 20px 53px;
+                    padding: 70px 33px;
 
                     .frame_core_top {
                         height: 10%;
 
                         .name {
-                            display: block;
+                            display: none;
                         }
 
                         i {
                             font-size: x-large;
                         }
+
+                        .arrow {
+                            width: 2vw;
+                            height: 2vw;
+                        }
+
                     }
                 }
             }
@@ -506,25 +708,30 @@
         .container {
             .box_core {
                 .frame_core {
-                    padding: 20px 77px;
-                    height: 437px;
+                    padding: 46px 54px;
+                    height: 500px;
 
 
 
                     .frame_core_bottom {
                         width: 100%;
                         height: 90%;
+                        padding-bottom: 50px;
 
                         .frame_core_bottom_left {
                             width: 25%;
                             display: flex;
                             align-items: center;
                             height: 100%;
+                            position: relative;
 
-                            img {
-                                display: block;
+                            video{
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
                                 width: 100%;
                                 height: 100%;
+                                z-index: 100;
                             }
                         }
 
@@ -637,13 +844,30 @@
         .container {
             .box_core {
                 .frame_core {
-                    padding: 20px 104px;
+                    padding: 53px 80px;
+
+                    .frame_core_top {
+
+                        .arrow {
+                            width: 2vw;
+                            height: 2vw;
+                        }
+                    }
 
                     .frame_core_bottom {
                         .frame_core_bottom_left {
                             display: flex;
                             align-items: center;
                             height: 100%;
+                            position: relative;
+                            video{
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                                width: 100%;
+                                height: 100%;
+                                z-index: 100;
+                            }
                         }
                     }
                 }
@@ -658,7 +882,7 @@
             .box_core {
                 .frame_core {
                     width: 80%;
-                    padding: 20px 83px;
+                    padding: 53px 65px;
 
                 }
             }
@@ -671,7 +895,7 @@
         .container {
             .box_core {
                 .frame_core {
-                    padding: 20px 98px;
+                    padding: 53px 78px;
                 }
             }
         }
@@ -683,7 +907,15 @@
         .container {
             .box_core {
                 .frame_core {
-                    padding: 20px 115px;
+                    padding: 54px 84px;
+
+                    .frame_core_top {
+
+                        .arrow {
+                            width: 1vw;
+                            height: 1vw;
+                        }
+                    }
                 }
             }
         }
