@@ -1,14 +1,19 @@
 .header_main {
     background-color: #6b7775;
+    height: 10%;
+    position: relative;
 
     .header_top {
+        height: 100%;
 
         .header_top_wrap {
             background-color: #6b7775;
-
-            padding: 50px 0px;
+            height: 100%;
+            padding: 0px;
 
             .row {
+            height: 100%;
+
                 .logo {
                     a {
                         img {
@@ -93,6 +98,11 @@
     }
 
     .mobile_menu {
+        position: absolute;
+        z-index: 10000;
+        background-color: #6b7775;
+        color: white;
+
 
         @media (min-width: 769px) {
             display: none;
@@ -112,7 +122,6 @@
                     width: 100%;
                     height: 100%;
                     padding: 10px 0;
-                    color: white;
 
                     i {
                         margin-right: 5px;

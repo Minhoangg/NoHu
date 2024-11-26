@@ -1,6 +1,6 @@
 <header class="header_main container-fluid p-0">
     <div class="container-fluid header_top">
-        <div class="container header_top_wrap py-3">
+        <div class="container header_top_wrap">
             <div class="row">
                 <div class="logo col-6">
                     <a href="">
@@ -13,7 +13,8 @@
                 </div>
 
                 <div class="action col-6 d-flex justify-content-end align-items-center">
-                    @if (Auth::check()) {{-- Kiểm tra nếu người dùng đã đăng nhập --}}
+                    @if (Auth::check())
+                        {{-- Kiểm tra nếu người dùng đã đăng nhập --}}
                         <div class="account">
                             <i class="fa-regular fa-user"></i>
                             <span>{{ Auth::user()->name }}</span> {{-- Hiển thị tên người dùng --}}
@@ -29,27 +30,41 @@
                                 </a>
                             </span>
                         </div>
-                    @else {{-- Nếu chưa đăng nhập --}}
+                    @else
+                        {{-- Nếu chưa đăng nhập --}}
                         <div class="account">
                             <span><a href="{{ route('login') }}">Đăng nhập</a></span>
                         </div>
                     @endif
                 </div>
-                
+
             </div>
         </div>
     </div>
-    <div class="mobile_menu container" id="mobileMenu">
+    <div class="mobile_menu container" id="mobileMenu" s>
         <ul>
-            <li>
-                <span>Liên hệ</span>
-            </li>
-            <li>
-                <span>Giới thiệu</span>
-            </li>
-            <li>
-                <span>Bài viết</span>
-            </li>
+            @if (Auth::check())
+                <li>
+                    <i class="fa-regular fa-user"></i>
+                    <span>{{ Auth::user()->name }}</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-coins"></i>
+                    <span>{{ Auth::user()->coin }}</span>
+                </li>
+                <li>
+                    <span>
+                        <a style="color: white" href="{{ route('client.logout') }}">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </a>
+                    </span>
+                </li>
+            @else
+                <li>
+                    <span>Đăng Xuất</span>
+                </li>
+            @endif
+
         </ul>
     </div>
 
