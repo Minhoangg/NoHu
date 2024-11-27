@@ -39,6 +39,8 @@ class AuthController extends Controller
         if (Auth::attempt(['name' => $request->name, 'password' => $request->password])) {
 
             $user = Auth::user();
+            $user->is_online = true;
+            $user->save();
             $job = (new DeductCoinJob($user->id))->delay(Carbon::now()->addMinutes(1));
             dispatch($job);
             return redirect()->route('client.home');
@@ -59,6 +61,7 @@ class AuthController extends Controller
             'name' => 'required|string|unique:users,name',
             'phone' => 'required|numeric|unique:users,phone_number',
             'password' => 'required|min:6',
+            'confirm_password' => 'required|same:password',
         ], [
             'name.required' => 'Tên đăng nhập không được để trống.',
             'name.string' => 'Tên đăng nhập phải là một chuỗi.',
@@ -68,6 +71,8 @@ class AuthController extends Controller
             'phone.unique' => 'Số điện thoại đã tồn tại.',
             'password.required' => 'Mật khẩu không được để trống.',
             'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự.',
+            'confirm_password.required' => 'Vui lòng nhập lại mật khẩu.',
+            'confirm_password.same' => 'Mật khẩu nhập lại không khớp.',
         ]);
 
         if ($validator->fails()) {

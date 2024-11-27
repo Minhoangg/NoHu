@@ -43,7 +43,8 @@
                 <div class="frame_core_bottom d-flex">
                     <div class="frame_core_bottom_left">
                         <video autoplay loop muted>
-                            <source src="{{ asset('assets/video/a4dd517c96b44c969b4790deb685a1ff.webm') }}" type="video/mp4">
+                            <source src="{{ asset('assets/video/a4dd517c96b44c969b4790deb685a1ff.webm') }}"
+                                type="video/mp4">
                         </video>
                     </div>
                     <div class="frame_core_bottom_right">
@@ -75,12 +76,12 @@
 
                                     <!-- Text -->
                                     <text id="animatedText" x="50%" y="50%" dominant-baseline="middle"
-                                        text-anchor="middle">Thánh địa win</text>
+                                        text-anchor="middle">{{ $nameGame }}</text>
                                 </svg>
 
                             </div>
                             <div class="image">
-                                <img src="{{ asset('assets/img/pg.png') }}" alt="" width="80"
+                                <img src="{{ asset('storage/' . $imgGame) }}" alt="" width="80"
                                     height="80">
                             </div>
                             <div class="scan">
@@ -89,20 +90,22 @@
                             </div>
                             <div class="ratio_dt">
                                 <div class="ring">
-                                    <h1>0%</h1>
+                                    <h1>{{ $percent ?? 0 }}%</h1>
                                 </div>
                             </div>
                         </div>
                         <div class="frame_core_bottom_right_2">
                             <canvas></canvas>
                             <div>
-                                <div class="button-time" id="timeButton">05:45 - 00:00</div>
-                                <div class="button-secondary" id="timeButton">round: 67-99</div>
+                                <div class="button-time" id="timeButton">{{ $startTime ?? 00 }} - {{ $endTime ?? 00 }}
+                                </div>
+                                <div class="button-secondary" id="round">round: {{ $min_ratio ?? 0 }} -
+                                    {{ $max_ratio ?? 0 }}</div>
                             </div>
 
                         </div>
                         <div class="frame_core_bottom_right_3">
-                            <button class="neon-button">
+                            <button class="neon-button" wire:click="handleClick()" id="saveToLocal">
                                 <span>Nhận Tỉ Lệ</span>
                                 <div class="glow-wrap">
                                     <div class="glow"></div>
@@ -115,4 +118,136 @@
             </div>
         </div>
     </div>
+    <input type="hidden" id="gameId" name="gameId" value="{{ $gameId }}">
+    <input type="hidden" id="minRatio" name="min_ratio" value="{{ $min_ratio }}">
+    <input type="hidden" id="maxRatio" name="max_ratio" value="{{ $max_ratio }}">
+    <input type="hidden" id="percent" name="percent" value="{{ $percent }}">
+    <input type="hidden" id="startTime" name="start_time" value="{{ $startTime }}">
+    <input type="hidden" id="endTime" name="end_time" value="{{ $endTimeSave }}">
 </div>
+
+<script>
+    window.addEventListener('load', function() {
+
+        const gameId = document.getElementById('gameId').value;
+
+
+        // Kiểm tra gameData trong localStorage cho gameId này
+        const gameData = JSON.parse(localStorage.getItem('gameData_' + gameId));
+
+        if (gameData) {
+
+            // Lấy thời gian hiện tại
+            const currentTime = new Date();
+            // Lấy thời gian kết thúc đã lưu trong localStorage
+            const storedEndTime = new Date(gameData.endTime);
+
+            // So sánh thời gian kết thúc với thời gian hiện tại
+            if (storedEndTime <= currentTime) {
+
+
+
+                console.log('Thời gian đã kết thúc cho gameId: ');
+            } else {
+
+                // ráng giá trị round
+                const minRatio = gameData.minRatio;
+                const maxRatio = gameData.maxRatio;
+
+                const roundElement = document.getElementById('round');
+                if (roundElement) {
+                    roundElement.textContent = `round: ${minRatio} - ${maxRatio}`;
+                }
+
+                // kết thúc ráng giá trị round
+
+                //ráng giá trị phần trâm
+                const percent = gameData.percent;
+                const ringElement = document.querySelector('.ring h1');
+                if (ringElement) {
+                    ringElement.textContent = `${percent}%`;
+                }
+
+                // kết thúc ráng giá trị phần trâm
+
+                // ráng giá trị time
+                const startTime = gameData.startTime;
+                const endTime = gameData.endTime;
+
+                const [startHour, startMinute] = startTime.split(':');
+
+                const endTimeWithoutDate = endTime.split(' ')[1];
+                const [endHour, endMinute] = endTimeWithoutDate.split(':');
+                const timeButton = document.getElementById('timeButton');
+                if (timeButton) {
+                    timeButton.textContent = `${startHour}:${startMinute} - ${endHour}:${endMinute}`;
+                }
+
+                // kết thúc ráng giá trị time
+
+                const saveButton = document.getElementById('saveToLocal');
+                if (saveButton) {
+                    saveButton.disabled = true;
+                    saveButton.style.backgroundColor =
+                        '#cccccc';
+                    saveButton.style.cursor = 'not-allowed';
+                }
+                console.log('Thời gian chưa kết thúc cho gameId: ');
+            }
+        } else {
+            console.log('Không tìm thấy dữ liệu game cho gameId: ');
+        }
+    });
+
+    document.getElementById('saveToLocal').addEventListener('click', function() {
+        const scanElement = document.querySelector('.scan');
+        const ratioElement = document.querySelector('.ratio_dt');
+
+        if (scanElement) {
+            scanElement.style.display = 'block';
+        }
+
+        if (ratioElement) {
+            ratioElement.style.display = 'none';
+        }
+
+        setTimeout(function() {
+            if (scanElement) {
+                scanElement.style.display = 'none';
+            }
+
+            if (ratioElement) {
+                ratioElement.style.display = 'block';
+            }
+        }, 3000);
+
+    });
+
+    document.getElementById('saveToLocal').addEventListener('click', function() {
+
+        setTimeout(function() {
+            const gameId = document.getElementById('gameId').value;
+            const minRatio = document.getElementById('minRatio').value;
+            const maxRatio = document.getElementById('maxRatio').value;
+            const percent = document.getElementById('percent').value;
+            const startTime = document.getElementById('startTime').value;
+            const endTime = document.getElementById('endTime').value;
+
+            // Kiểm tra xem các giá trị có tồn tại trước khi lưu
+            if (gameId && minRatio && maxRatio && percent && startTime && endTime) {
+                const gameData = {
+                    gameId: gameId,
+                    minRatio: minRatio,
+                    maxRatio: maxRatio,
+                    percent: percent,
+                    startTime: startTime,
+                    endTime: endTime
+                };
+
+                localStorage.setItem('gameData_' + gameId, JSON.stringify(gameData));
+            } else {
+                console.error("Một số trường không có giá trị hợp lệ.");
+            }
+        }, 3500);
+    });
+</script>

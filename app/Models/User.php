@@ -26,6 +26,7 @@ class User extends Authenticatable
         'coin',
         'telegram',
         'parent_id',
+        'is_online',
     ];
 
     /**
