@@ -22,6 +22,7 @@ class HandleGame extends Component
     public $endTimeSave;
     public $nameGame;
     public $imgGame;
+    public $hasReceivedRatio = false;
 
     // Phương thức để lấy dữ liệu game
     public function mount()
@@ -88,6 +89,8 @@ class HandleGame extends Component
         $this->endTimeSave = $endTime;
 
         // kết thúc xử lý khung giờ
+
+        $this->hasReceivedRatio = true;
 
     }
 

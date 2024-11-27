@@ -22,7 +22,7 @@
             </video>
 
             <div class="login_form card shadow-lg"
-                style="background-image: url('{{ asset('assets/img/frame_popup-desktop.png') }}')">
+                style="background-image: url('{{ asset('assets/img/Asset 1.png') }}')">
                 <h3 class="text-center mb-4">Đăng nhập</h3>
 
                 @if (session('error'))

@@ -105,12 +105,21 @@
 
                         </div>
                         <div class="frame_core_bottom_right_3">
-                            <button class="neon-button" wire:click="handleClick()" id="saveToLocal">
-                                <span>Nhận Tỉ Lệ</span>
-                                <div class="glow-wrap">
-                                    <div class="glow"></div>
-                                </div>
-                            </button>
+                            @if (!$hasReceivedRatio)
+                                <button class="neon-button" wire:click="handleClick()" id="saveToLocal">
+                                    <span>Nhận Tỉ Lệ</span>
+                                    <div class="glow-wrap">
+                                        <div class="glow"></div>
+                                    </div>
+                                </button>
+                            @else
+                                <button class="neon-button">
+                                    <span>Đã nhận Tỉ Lệ</span>
+                                    <div class="glow-wrap">
+                                        <div class="glow"></div>
+                                    </div>
+                                </button>
+                            @endif
                             <img src="{{ asset('assets/img/1_tmp.png') }}" alt="">
                         </div>
                     </div>

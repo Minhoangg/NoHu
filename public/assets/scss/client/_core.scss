@@ -404,7 +404,7 @@
                             div {
                                 .button-time {
                                     display: inline-block;
-                                    padding: 10px;
+                                    padding: 10px 2px;
                                     font-size: 13px;
                                     font-weight: bold;
                                     color: #fff;
@@ -423,6 +423,9 @@
                                     // Gradient animation
                                     background-size: 200% 200%;
                                     animation: gradientAnimation 3s ease infinite;
+
+                                    width: 110px;
+                                    text-align: center;
 
                                     // Hover effect
                                     &:hover {
@@ -454,7 +457,7 @@
 
                                 .button-secondary {
                                     display: inline-block;
-                                    padding: 10px;
+                                    padding: 10px 2px;
                                     font-size: 13px;
                                     font-weight: bold;
                                     color: #fff;
@@ -466,6 +469,7 @@
                                     transition: all 0.4s ease;
                                     position: relative;
                                     overflow: hidden;
+                                    text-align: center;
 
                                     // Hiệu ứng phát sáng
                                     box-shadow: 0 0 15px rgba(255, 0, 122, 0.6), 0 0 30px rgba(0, 212, 255, 0.6);
@@ -473,6 +477,8 @@
                                     // Gradient animation
                                     background-size: 200% 200%;
                                     animation: gradientAnimation 3s ease infinite;
+
+                                    width: 110px;
 
                                     // Hover effect
                                     &:hover {

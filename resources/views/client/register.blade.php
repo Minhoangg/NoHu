@@ -24,7 +24,7 @@
 
         @if (session('successRegister'))
             <div id="success-message" class="login_form card shadow-lg text-center"
-                style="background-image: url('{{ asset('assets/img/frame_popup-desktop.png') }}');">
+                style="background-image: url('{{ asset('assets/img/Asset 1.png') }}');">
                 <div class="alert alert-success">
                     <h4>Đăng ký thành công!</h4>
                     <p>Cảm ơn bạn đã đăng ký. Hệ thống sẽ chuyển hướng về <a href="{{ route('client.home') }}">trang
@@ -33,7 +33,7 @@
             </div>
         @else
             <div id="registration-form" class="login_form card shadow-lg"
-                style="background-image: url('{{ asset('assets/img/frame_popup-desktop.png') }}')">
+                style="background-image: url('{{ asset('assets/img/Asset 1.png') }}')">
                 <h3 class="text-center mb-4">Đăng ký</h3>
 
                 @if (session('error'))
