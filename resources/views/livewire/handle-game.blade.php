@@ -99,8 +99,7 @@
                             <div>
                                 <div class="button-time" id="timeButton">{{ $startTime ?? 00 }} - {{ $endTime ?? 00 }}
                                 </div>
-                                <div class="button-secondary" id="round">round: {{ $min_ratio ?? 0 }} -
-                                    {{ $max_ratio ?? 0 }}</div>
+                                <div class="button-secondary" id="round">round: {{ $min_ratio ?? 0 }}</div>
                             </div>
 
                         </div>
@@ -161,21 +160,21 @@
 
                 // ráng giá trị round
                 const minRatio = gameData.minRatio;
-                const maxRatio = gameData.maxRatio;
+                // const maxRatio = gameData.maxRatio;
 
                 const roundElement = document.getElementById('round');
                 if (roundElement) {
-                    roundElement.textContent = `round: ${minRatio} - ${maxRatio}`;
+                    roundElement.textContent = `round: ${minRatio}`;
                 }
 
                 // kết thúc ráng giá trị round
 
                 //ráng giá trị phần trâm
-                const percent = gameData.percent;
-                const ringElement = document.querySelector('.ring h1');
-                if (ringElement) {
-                    ringElement.textContent = `${percent}%`;
-                }
+                // const percent = gameData.percent;
+                // const ringElement = document.querySelector('.ring h1');
+                // if (ringElement) {
+                //     ringElement.textContent = `${percent}%`;
+                // }
 
                 // kết thúc ráng giá trị phần trâm
 
@@ -237,18 +236,18 @@
         setTimeout(function() {
             const gameId = document.getElementById('gameId').value;
             const minRatio = document.getElementById('minRatio').value;
-            const maxRatio = document.getElementById('maxRatio').value;
-            const percent = document.getElementById('percent').value;
+            // const maxRatio = document.getElementById('maxRatio').value;
+            // const percent = document.getElementById('percent').value;
             const startTime = document.getElementById('startTime').value;
             const endTime = document.getElementById('endTime').value;
 
             // Kiểm tra xem các giá trị có tồn tại trước khi lưu
-            if (gameId && minRatio && maxRatio && percent && startTime && endTime) {
+            if (gameId && minRatio && percent && startTime && endTime) {
                 const gameData = {
                     gameId: gameId,
                     minRatio: minRatio,
-                    maxRatio: maxRatio,
-                    percent: percent,
+                    // maxRatio: maxRatio,
+                    // percent: percent,
                     startTime: startTime,
                     endTime: endTime
                 };

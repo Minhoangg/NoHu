@@ -33,6 +33,7 @@ class HandleGame extends Component
             if ($game) {
                 $this->nameGame = $game->title;
                 $this->imgGame = $game->image;
+                $this->percent = $game->percent;
             } else {
                 session()->flash('error', 'Game không tồn tại.');
             }
@@ -52,24 +53,24 @@ class HandleGame extends Component
 
         // xử lý random tỉ lệ
 
-        $min_ratio = rand($dataGame->min_percent, $dataGame->max_percent);
-        $max_ratio = rand($dataGame->min_percent, $dataGame->max_ratio);
+        $min_ratio = rand(70, 90);
+        // $max_ratio = rand($dataGame->min_percent, $dataGame->max_ratio);
 
-        if ($min_ratio > $max_ratio) {
-            $temp = $min_ratio;
-            $min_ratio = $max_ratio;
-            $max_ratio = $temp;
-        }
+        // if ($min_ratio > $max_ratio) {
+        //     $temp = $min_ratio;
+        //     $min_ratio = $max_ratio;
+        //     $max_ratio = $temp;
+        // }
 
         $this->min_ratio = $min_ratio;
-        $this->max_ratio = $max_ratio;
+        // $this->max_ratio = $max_ratio;
 
         // kết thúc xử lý tỉ lệ
 
 
         // xử lý phần trăm
 
-        $this->percent = rand($dataGame->min_percent, $dataGame->max_percent);
+        // $this->percent = rand($dataGame->min_percent, $dataGame->max_percent);
 
 
         // kết thúc xử phần trăm
@@ -91,7 +92,6 @@ class HandleGame extends Component
         // kết thúc xử lý khung giờ
 
         $this->hasReceivedRatio = true;
-
     }
 
     public function render()

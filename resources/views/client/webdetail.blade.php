@@ -24,7 +24,7 @@
                                     <div class="item_name">{{ $game->title }}</div>
                                     <div class="animation_item">
                                         <img class="vortex" src="{{asset('assets/img/z6075556668271_ffab7f49e36a81622c894714de7123f1-removebg-preview.png')}}" alt="" />
-                                        <span>20%</span>
+                                        <span>{{ $game->percent }}%</span>
                                     </div>
                                 </a>
                             </div>

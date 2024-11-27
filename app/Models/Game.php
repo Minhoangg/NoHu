@@ -20,6 +20,7 @@ class Game extends Model
         'min_ratio',
         'max_ratio',
         'timeend',
+        'percent',
     ];
     public function lobby()
     {
