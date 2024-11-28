@@ -23,6 +23,7 @@ class HandleGame extends Component
     public $nameGame;
     public $imgGame;
     public $hasReceivedRatio = false;
+    public $disableReceiveButton = false;
 
     // Phương thức để lấy dữ liệu game
     public function mount()
@@ -34,6 +35,11 @@ class HandleGame extends Component
                 $this->nameGame = $game->title;
                 $this->imgGame = $game->image;
                 $this->percent = $game->percent;
+
+                $user = Auth::user();
+                if ($user && $user->coin == 0) {
+                    $this->disableReceiveButton = true; // Vô hiệu hóa nút
+                }
             } else {
                 session()->flash('error', 'Game không tồn tại.');
             }

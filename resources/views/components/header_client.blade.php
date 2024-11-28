@@ -15,6 +15,9 @@
                 <div class="action col-6 d-flex justify-content-end align-items-center">
                     @if (Auth::check())
                         {{-- Kiểm tra nếu người dùng đã đăng nhập --}}
+                        <div class="lienhe" style="margin-right: 20px">
+                            <span>Liên hệ</span>
+                        </div>
                         <div class="account">
                             <i class="fa-regular fa-user"></i>
                             <span>{{ Auth::user()->name }}</span> {{-- Hiển thị tên người dùng --}}
@@ -44,6 +47,9 @@
     <div class="mobile_menu container" id="mobileMenu" s>
         <ul>
             @if (Auth::check())
+                <li class="lienhe">
+                    <span>Liên hệ</span>
+                </li>
                 <li>
                     <i class="fa-regular fa-user"></i>
                     <span>{{ Auth::user()->name }}</span>
@@ -73,6 +79,11 @@
 <script>
     const menuIcon = document.getElementById("menuIcon");
     const mobileMenu = document.getElementById("mobileMenu");
+    const accountElement = document.querySelector('.lienhe');
+
+    accountElement.addEventListener('click', function() {
+        alert('Liên hệ admin để nhận thêm xu!');
+    });
 
     menuIcon.addEventListener("click", () => {
         mobileMenu.style.display = mobileMenu.style.display === "block" ? "none" : "block";

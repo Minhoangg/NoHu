@@ -104,21 +104,29 @@
 
                         </div>
                         <div class="frame_core_bottom_right_3">
-                            @if (!$hasReceivedRatio)
+                            @if (!$hasReceivedRatio && !$disableReceiveButton)
                                 <button class="neon-button" wire:click="handleClick()" id="saveToLocal">
                                     <span>Nhận Tỉ Lệ</span>
                                     <div class="glow-wrap">
                                         <div class="glow"></div>
                                     </div>
                                 </button>
+                            @elseif ($disableReceiveButton)
+                                <button class="neon-button" disabled>
+                                    <span>Không đủ coin</span>
+                                    <div class="glow-wrap">
+                                        <div class="glow"></div>
+                                    </div>
+                                </button>
                             @else
-                                <button class="neon-button">
+                                <button class="neon-button" disabled>
                                     <span>Đã nhận Tỉ Lệ</span>
                                     <div class="glow-wrap">
                                         <div class="glow"></div>
                                     </div>
                                 </button>
                             @endif
+
                             <img src="{{ asset('assets/img/1_tmp.png') }}" alt="">
                         </div>
                     </div>
