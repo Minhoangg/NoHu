@@ -41,7 +41,7 @@ class AuthController extends Controller
             $user = Auth::user();
             $user->is_online = true;
             $user->save();
-            $job = (new DeductCoinJob($user->id))->delay(Carbon::now()->addMinutes(1));
+            $job = (new DeductCoinJob($user->id))->delay(Carbon::now()->addMinutes(2));
             dispatch($job);
             return redirect()->route('client.home');
         }

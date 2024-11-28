@@ -55,7 +55,7 @@ class DeductCoinJob implements ShouldQueue
             ]);
 
             // Dispatch job mới sau 1 phút
-            $job = (new DeductCoinJob($user->id))->delay(Carbon::now()->addMinute(1));
+            $job = (new DeductCoinJob($user->id))->delay(Carbon::now()->addMinute(2));
             dispatch($job);
         } catch (\Exception $e) {
             Log::error("Lỗi xảy ra trong DeductCoinJob", [
