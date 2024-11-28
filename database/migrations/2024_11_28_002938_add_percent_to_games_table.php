@@ -9,7 +9,7 @@ class AddPercentToGamesTable extends Migration
     public function up()
     {
         Schema::table('games', function (Blueprint $table) {
-            $table->integer('percent')->nullable();  // Thêm cột percent
+            $table->string('percent', 10)->nullable();  // Thêm cột percent
         });
     }
 

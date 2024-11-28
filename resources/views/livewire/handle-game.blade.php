@@ -1,8 +1,5 @@
 <div class="core_wrap container-fluid p-0">
 
-    <video autoplay loop muted>
-        <source src="{{ asset('assets/video/1120.mp4') }}" type="video/mp4">
-    </video>
     <div class="container">
         <div class="box_core">
             <div class="frame_core">
@@ -42,14 +39,11 @@
 
                 <div class="frame_core_bottom d-flex">
                     <div class="frame_core_bottom_left">
-                        <video autoplay loop muted>
-                            <source src="{{ asset('assets/video/a4dd517c96b44c969b4790deb685a1ff.webm') }}"
-                                type="video/mp4">
-                        </video>
+
                     </div>
                     <div class="frame_core_bottom_right">
                         <div class="frame_core_bottom_right_1">
-                            <div class="name">
+                            <div class="name_core">
                                 <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: unset">
                                     <!-- Định nghĩa pattern cho chữ -->
@@ -90,7 +84,7 @@
                             </div>
                             <div class="ratio_dt">
                                 <div class="ring">
-                                    <h1>{{ $percent ?? 0 }}%</h1>
+                                    <h1>{{ $percent ?? 0 }}</h1>
                                 </div>
                             </div>
                         </div>

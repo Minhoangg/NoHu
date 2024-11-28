@@ -2,10 +2,6 @@
 
 @section('content')
     <div class="home_wrap container-fluid p-0">
-        <video autoplay loop muted>
-            <source src="{{ asset('assets/video/1120.mp4') }}" type="video/mp4">
-        </video>
-
         <div class="container home_box">
             <div class="box_lobby">
                 <div class="row">

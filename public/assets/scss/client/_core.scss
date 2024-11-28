@@ -2,15 +2,11 @@
     height: 90%;
     position: relative;
 
-    video {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1000;
-    }
+    background-image: url('../../img/photo_6215453676525438641_x.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+
 
     .container {
         position: relative;
@@ -188,7 +184,8 @@
 
                     .frame_core_bottom_left {
                         position: relative;
-                        video{
+
+                        video {
                             position: absolute;
                             top: 0px;
                             left: 0px;
@@ -273,7 +270,7 @@
                                 padding: 10px;
                             }
 
-                            .name {
+                            .name_core {
                                 text-align: center;
                                 color: white;
 
@@ -283,7 +280,6 @@
                                     height: 50px;
 
                                     text {
-                                        fill: url(#imagePattern);
                                         font-family: "Protest Guerrilla", sans-serif;
                                         font-size: 90px;
                                         letter-spacing: 5px;
@@ -715,6 +711,10 @@
 
 @media (min-width: 768px) {
     .core_wrap {
+        background-image: url('../../img/photo_6217381558495593506_y.jpg');
+        background-size: 100% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
         .container {
             .box_core {
                 .frame_core {
@@ -734,15 +734,11 @@
                             align-items: center;
                             height: 100%;
                             position: relative;
+                            background-image: url('../../img/z6079154018507_366687593e5d093e763829c947533e4c-removebg-preview.png');
+                            background-size: 100% 100%;
+                            background-position: center center;
+                            background-repeat: no-repeat;
 
-                            video{
-                                position: absolute;
-                                top: 0px;
-                                left: 0px;
-                                width: 100%;
-                                height: 100%;
-                                z-index: 100;
-                            }
                         }
 
                         .frame_core_bottom_right {
@@ -870,7 +866,8 @@
                             align-items: center;
                             height: 100%;
                             position: relative;
-                            video{
+
+                            video {
                                 position: absolute;
                                 top: 0px;
                                 left: 0px;

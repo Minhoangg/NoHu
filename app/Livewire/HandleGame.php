@@ -41,7 +41,7 @@ class HandleGame extends Component
                     $this->disableReceiveButton = true; // Vô hiệu hóa nút
                 }
             } else {
-                session()->flash('error', 'Game không tồn tại.');
+                session()->flash('error', value: 'Game không tồn tại.');
             }
         } else {
             session()->flash('error', 'Game ID không hợp lệ.');

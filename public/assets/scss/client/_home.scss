@@ -1,16 +1,10 @@
 .home_wrap {
     height: 90%;
     position: relative;
-
-    video {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1000;
-    }
+    background-image: url('../../img/photo_6217381558495593506_y.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
 
     .container {
         position: relative;
@@ -52,7 +46,7 @@
                             display: flex;
                             justify-content: space-between;
                             text-decoration: none;
-                            background-color: #6b7775;
+                            background-color: #e6a179;
                             /* Nền xám nhẹ */
                             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                             /* Thêm bóng nhẹ để tạo chiều sâu */
@@ -109,44 +103,62 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 1024px) {
-            .box_lobby {
-                /* Cho phép chiều cao tự động thay đổi trên các màn hình nhỏ */
-                font-size: 20px;
-                /* Giảm kích thước font cho màn hình nhỏ */
-            }
 
-            .col-4 {
-                width: 48%;
-                /* 2 cột trên màn hình nhỏ */
-            }
-        }
 
-        @media (max-width: 768px) {
-            .box_lobby {
-                max-height: 80%;
-                font-size: 18px;
-                /* Giảm kích thước font cho các màn hình di động */
-            }
+    }
+}
 
-            .col-4 {
-                width: 100%;
-                /* 1 cột trên màn hình di động */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .box_lobby {
-                max-height: 80%;
-                font-size: 16px;
-                /* Giảm kích thước font thêm cho màn hình điện thoại nhỏ */
-            }
-
-            .col-4 {
-                width: 100%;
-                /* 1 cột trên màn hình rất nhỏ */
-            }
-        }
+@media (max-width: 1024px) {
+    .box_lobby {
+        /* Cho phép chiều cao tự động thay đổi trên các màn hình nhỏ */
+        font-size: 20px;
+        /* Giảm kích thước font cho màn hình nhỏ */
     }
 
+    .col-4 {
+        width: 48%;
+        /* 2 cột trên màn hình nhỏ */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .home_wrap {
+        background-image: url('../../img/photo_6215453676525438641_x.jpg');
+        background-size: 100% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .box_lobby {
+        max-height: 80%;
+        font-size: 18px;
+        /* Giảm kích thước font cho các màn hình di động */
+    }
+
+    .col-4 {
+        width: 100%;
+        /* 1 cột trên màn hình di động */
+    }
+}
+
+@media (max-width: 480px) {
+
+    .home_wrap {
+        background-image: url('../../img/photo_6215453676525438641_x.jpg');
+        background-size: 100% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .box_lobby {
+        max-height: 80%;
+        font-size: 16px;
+        /* Giảm kích thước font thêm cho màn hình điện thoại nhỏ */
+    }
+
+    .col-4 {
+        width: 100%;
+        /* 1 cột trên màn hình rất nhỏ */
+    }
 }
