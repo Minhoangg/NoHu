@@ -51,7 +51,7 @@
                         <div class="frame_core_bottom_right_1">
                             <div class="name">
                                 <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: unset">
                                     <!-- Định nghĩa pattern cho chữ -->
                                     <defs>
                                         <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="400"
